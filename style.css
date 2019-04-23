@@ -1,0 +1,111 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-image: url(grocery%20background.jpg);
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.sidenav a {
+    padding: 10px 8px 10px 25px;
+    text-decoration:;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav div {
+    text-align: center;
+    font-family: "Comic Sans MS";
+    margin-top: -30px;
+    margin-bottom: 60px;
+    font-size: 30px;
+    color: #F9F0EB;
+    display: block;
+}
+
+.sidenav img {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sidenav a:hover {
+    color: white;
+}
+
+.main {
+    margin-left: 280px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 10px;
+}
+
+.main #title {
+    border-radius: 40px;
+    text-align: center;
+    font-size:100px;
+    font-family: Comic Sans MS;
+    margin: 0% 1%;
+    padding-bottom: 20px;
+    border: 5px solid #111;
+    font-weight: bold;
+    background-color: white;
+    color: #111;
+    
+}
+
+.main #content {
+    padding: 1%;
+    border-radius: 20px;
+    font-family: Comic Sans MS;
+    margin: 1% 5%;
+    border: 5px solid #111;
+    background-color: white;
+}
+
+.main #form {
+    margin-left: 20px;
+    width: 100%;
+    
+}
+
+.main #submitButton {
+    background-color: ;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    margin-top: 20px;
+    padding: 10px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
+    font-family: Comic Sans MS;
+}
+
+.main #submitButton:hover {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

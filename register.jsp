@@ -10,9 +10,9 @@
 
 <div class="sidenav">
     <img src="resources/pig_logo.png">
-    <a href="#about">Register</a>
-    <a href="#services">View Products</a>
-    <a href="#clients">Shopping Cart</a>
+    <a href="register.jsp">Register</a>
+    <a href="login.jsp">View Products</a>
+    <a href="cart.jsp">Shopping Cart</a>
 </div>
 
 <div class="main">
@@ -23,7 +23,7 @@
             <p>Members gain great perks like full access to our store and monthly coupons! </p>
         </div>
         <div id="form">
-            <form name="creditForm" action="doPaymentSchedule" method=get>
+            <form name="registerForm" action="doRegister" method=post>
                 <table>
                     <tr>
                         <td><label>First Name :</label></td>

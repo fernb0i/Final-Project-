@@ -2,60 +2,77 @@ package model;
 
 public class Cart {
 
-	private int cartID;
-	private int totalPrice;
-	private int customerID;
+	private int customer_customerID;
+	private int product_productID;
+	private int quantity;
+	
 	public Cart() {
-		this.cartID = 1;
-		this.totalPrice = 0;
-		this.customerID = 1;
+		this.customer_customerID = 0;
+		this.product_productID = 0;
+		this.quantity = 0;
 	}
-	public Cart(int cartID, int totalPrice, int customerID) {
-		this.cartID = cartID;
-		this.totalPrice = totalPrice;
-		this.customerID = customerID;
-	}
+	
 	/**
-	 * @return the cartID
+	 * @param customer_customerID
+	 * @param product_productID
+	 * @param quantity
 	 */
-	public int getCartID() {
-		return cartID;
+	public Cart(int customer_customerID, int product_productID, int quantity) {
+		this.customer_customerID = customer_customerID;
+		this.product_productID = product_productID;
+		this.quantity = quantity;
 	}
+
 	/**
-	 * @param cartID the cartID to set
+	 * @return the customer_customerID
 	 */
-	public void setCartID(int cartID) {
-		this.cartID = cartID;
+	public int getCustomer_customerID() {
+		return customer_customerID;
 	}
+
 	/**
-	 * @return the totalPrice
+	 * @param customer_customerID the customer_customerID to set
 	 */
-	public int getTotalPrice() {
-		return totalPrice;
+	public void setCustomer_customerID(int customer_customerID) {
+		this.customer_customerID = customer_customerID;
 	}
+
 	/**
-	 * @param totalPrice the totalPrice to set
+	 * @return the product_productID
 	 */
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
+	public int getProduct_productID() {
+		return product_productID;
 	}
+
 	/**
-	 * @return the customerID
+	 * @param product_productID the product_productID to set
 	 */
-	public int getCustomerID() {
-		return customerID;
+	public void setProduct_productID(int product_productID) {
+		this.product_productID = product_productID;
 	}
+
 	/**
-	 * @param customerID the customerID to set
+	 * @return the quantity
 	 */
-	public void setCustomerID(int customerID) {
-		this.customerID = customerID;
+	public int getQuantity() {
+		return quantity;
 	}
+
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Cart [cartID=" + cartID + ", totalPrice=" + totalPrice + ", customerID=" + customerID + "]";
+		return "Cart [customer_customerID=" + customer_customerID + ", product_productID=" + product_productID
+				+ ", quantity=" + quantity + "]";
 	}
+	
+	
 }

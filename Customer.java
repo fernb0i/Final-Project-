@@ -1,43 +1,44 @@
 package model;
 
 public class Customer {
-
+	
 	private int customerID;
-	private String userName;
-	private String passWord;
 	private String fName;
 	private String lName;
-	private String mInitial;
-	private String emailAddress;
-	private int age;
-	private int phone;
+	private String phoneNum;
 	private String email;
+	private String username;
+	private String password;
 	
 	public Customer() {
 		this.customerID = 1;
-		this.userName = "";
-		this.passWord = "";
-		this.fName = "";
-		this.lName = "";
-		this.mInitial = "";
-		this.emailAddress = "";
-		this.age = 0;
-		this.phone = 0;
-		this.email = "";
+		this.fName = "first";
+		this.lName = "last";
+		this.phoneNum = "0";
+		this.email = "email";
+		this.username = "default";
+		this.password = "default";
 	}
-
-	public Customer(int customerID, String userName, String passWord, String fName, String lName, String mInitial,
-			String emailAddress, int age, int phone, String email) {
+	
+	/**
+	 * @param customerID
+	 * @param fName
+	 * @param lName
+	 * @param phoneNum
+	 * @param email
+	 * @param username
+	 * @param password
+	 */
+	
+	public Customer(int customerID, String fName, String lName, String phoneNum, String email, String username,
+			String password) {
 		this.customerID = customerID;
-		this.userName = userName;
-		this.passWord = passWord;
 		this.fName = fName;
 		this.lName = lName;
-		this.mInitial = mInitial;
-		this.emailAddress = emailAddress;
-		this.age = age;
-		this.phone = phone;
+		this.phoneNum = phoneNum;
 		this.email = email;
+		this.username = username;
+		this.password = password;
 	}
 
 	/**
@@ -52,34 +53,6 @@ public class Customer {
 	 */
 	public void setCustomerID(int customerID) {
 		this.customerID = customerID;
-	}
-
-	/**
-	 * @return the userName
-	 */
-	public String getUserName() {
-		return userName;
-	}
-
-	/**
-	 * @param userName the userName to set
-	 */
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	/**
-	 * @return the passWord
-	 */
-	public String getPassWord() {
-		return passWord;
-	}
-
-	/**
-	 * @param passWord the passWord to set
-	 */
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
 	}
 
 	/**
@@ -111,59 +84,17 @@ public class Customer {
 	}
 
 	/**
-	 * @return the mInitial
+	 * @return the phoneNum
 	 */
-	public String getmInitial() {
-		return mInitial;
+	public String getPhoneNum() {
+		return phoneNum;
 	}
 
 	/**
-	 * @param mInitial the mInitial to set
+	 * @param phoneNum the phoneNum to set
 	 */
-	public void setmInitial(String mInitial) {
-		this.mInitial = mInitial;
-	}
-
-	/**
-	 * @return the emailAddress
-	 */
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-
-	/**
-	 * @param emailAddress the emailAddress to set
-	 */
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
-
-	/**
-	 * @return the age
-	 */
-	public int getAge() {
-		return age;
-	}
-
-	/**
-	 * @param age the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	/**
-	 * @return the phone
-	 */
-	public int getPhone() {
-		return phone;
-	}
-
-	/**
-	 * @param phone the phone to set
-	 */
-	public void setPhone(int phone) {
-		this.phone = phone;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 
 	/**
@@ -180,14 +111,44 @@ public class Customer {
 		this.email = email;
 	}
 
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", userName=" + userName + ", passWord=" + passWord + ", fName="
-				+ fName + ", lName=" + lName + ", mInitial=" + mInitial + ", emailAddress=" + emailAddress + ", age="
-				+ age + ", phone=" + phone + ", email=" + email + "]";
+		return "Customer [customerID=" + customerID + ", fName=" + fName + ", lName=" + lName + ", phoneNum=" + phoneNum
+				+ ", email=" + email + ", username=" + username + ", password=" + password + "]";
 	}
 	
+	
+
+
 }

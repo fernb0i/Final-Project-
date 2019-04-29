@@ -20,7 +20,7 @@
     <div id="title">Wiggly Piggly!</div>
     <div id="content">
         <div id="section1">
-            <h2>login Now!</h2>
+            <h2>Login Now!</h2>
             <p>Please enter your credentials to view our products!</p>
         </div>
         <div id="form">

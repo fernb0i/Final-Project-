@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,14 +28,16 @@
                 <table>
                     <tr>
                         <td><label>Username: </label></td>
-                        <td><input type="text" name="username" /></td>
+                        <td><input type="text" name="username" required /></td>
                     </tr>
                     <tr>
                         <td><label>Password: </label>
-                        <td><input type="text" name="password" /></td>
+                        <td><input type="password" name="password" required /></td>
                     </tr>
                 </table>
                 <input id="submitButton" type="submit" name="submitButton" value="Login" />
+                <br><br>
+                <%= request.getAttribute("errorMessage") %>
             </form>
             <br>
         </div>

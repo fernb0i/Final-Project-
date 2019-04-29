@@ -10,8 +10,9 @@
 
 <div class="sidenav">
     <img src="resources/pig_logo.png">
-    <a href="login.jsp">View Products</a>
-    <a href="cart.jsp">Shopping Cart</a>
+    <a href="register">Register</a>
+    <a href="login">View Products</a>
+    <a href="cartLogin">Shopping Cart</a>
 </div>
 
 <div class="main">

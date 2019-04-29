@@ -9,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dbHelpers.ReadProductsQuery;
+
 /**
- * Servlet implementation class RegisterFormServlet
+ * Servlet implementation class ReadProductsServlet
  */
-@WebServlet("/register")
-public class RegisterFormServlet extends HttpServlet {
+@WebServlet("/doRead")
+public class ReadProductsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterFormServlet() {
+    public ReadProductsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,14 +30,22 @@ public class RegisterFormServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		doPost(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/register.jsp";
+		// create a readQuery helper
+		ReadProductsQuery rq = new ReadProductsQuery("wigglypiggly", "sperryman", "Sp224693!");
+		
+		// get html table
+		rq.doRead();
+		String table = rq.getHTMLTable();
+		
+		// pass execution to products.jsp
+		request.setAttribute("table", table);
+		String url = "/products.jsp";
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

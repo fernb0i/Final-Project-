@@ -12,7 +12,7 @@
     <img src="resources/pig_logo.png">
     <a href="register">Register</a>
     <a href="login">View Products</a>
-    <a href="cart.jsp">Shopping Cart</a>
+    <a href="cartLogin">Shopping Cart</a>
 </div>
 
 <div class="main">

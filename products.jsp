@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%
+    
+   	String table = (String) request.getAttribute("table");
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +16,9 @@
 
 <div class="sidenav">
     <img src="resources/pig_logo.png">
-    <a href="register.jsp">Register</a>
-    <a href="login.jsp">View Products</a>
-    <a href="cart.jsp">Shopping Cart</a>
+    <a href="register">Register</a>
+    <a href="login">View Products</a>
+    <a href="cartLogin">Shopping Cart</a>
 </div>
 
 <div class="main">
@@ -21,6 +27,10 @@
         <div id="section1">
             <h2>Products</h2>
             <p>Select from our list of delicious products below! </p>
+            <br>
+            <%= table  %>
+            <br>
+            <a href="add">Add a product</a>
         </div>
 
     </div>

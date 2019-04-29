@@ -24,7 +24,7 @@
             <p>Please enter your credentials to view our products!</p>
         </div>
         <div id="form">
-            <form name="loginForm" action="doLogin" method=post>
+            <form name="loginForm" action="doCartLogin" method=post>
                 <table>
                     <tr>
                         <td><label>Username: </label></td>

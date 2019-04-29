@@ -12,14 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegisterFormServlet
  */
-@WebServlet("/register")
-public class RegisterFormServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private String errorMessage = " ";  
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterFormServlet() {
+    public LoginFormServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +36,8 @@ public class RegisterFormServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/register.jsp";
+		String url = "/login.jsp";
+		request.setAttribute("errorMessage", errorMessage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

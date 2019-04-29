@@ -17,8 +17,8 @@ import model.Customer;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/doLogin")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/doCartLogin")
+public class CartLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private HttpSession session;
@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public CartLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -74,12 +74,14 @@ public class LoginServlet extends HttpServlet {
 				session.invalidate();
 				session = request.getSession(true);
 				session.setAttribute("customer", customer);
-				url = "doRead";
+				//
+				url = "cart.jsp";
+				//
 			} else {
 				errorMessage = "Error: Unrecognized Username or Password<br>Login attempts remaining: "+(3-(loginAttempts));
 				request.setAttribute("errorMessage", errorMessage);
 				session.setAttribute("loginAttempts", loginAttempts++);
-				url="login.jsp";
+				url="cartLogin.jsp";
 			}
 		}
 		//forward requests

@@ -27,11 +27,11 @@
                 <table>
                     <tr>
                         <td><label>First Name :</label></td>
-                        <td><input type="text" name="firstName" /></td>
+                        <td><input type="text" name="fName" /></td>
                     </tr>
                     <tr>
                         <td><label>Last Name :</label>
-                        <td><input type="text" name="lastName" /></td>
+                        <td><input type="text" name="lName" /></td>
                     </tr>
                     <tr>
                         <td><label>Phone # :</label>
@@ -41,9 +41,18 @@
                         <td><label>Email :</label>
                         <td><input type="text" name="email" /></td>
                     </tr>
+                    <tr>
+                        <td><label>Username :</label>
+                        <td><input type="text" name="username" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password :</label>
+                        <td><input type="text" name="password" /></td>
+                    </tr>
                 </table>
                 <input id="submitButton" type="submit" name="submitButton" value="Register" />
             </form>
+            
             <br>
         </div>
     </div>

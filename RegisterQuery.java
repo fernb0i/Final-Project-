@@ -9,7 +9,7 @@ import model.Customer;
 
 public class RegisterQuery {
 
-	public Connection connection; 
+	private Connection connection; 
 	
 	
 	public RegisterQuery(String dbName, String uname, String pwd){

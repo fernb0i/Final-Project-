@@ -15,12 +15,12 @@ public class ProductsQuery {
 	private PreparedStatement ps;
 	private ResultSet results;
 	
-	public ProductsQuery(String dbName, int productID, String productName, int productPrice, String productImage, int productQuantity, String productDesc){
+	public ProductsQuery(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/"+dbName;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			this.connection = DriverManager.getConnection(url, productID, productName, productPrice, productImage, productQuantity, productDesc);
+			this.connection = DriverManager.getConnection(url, uname, pwd);
 			ps = connection.prepareStatement("select * from products where productID=?");
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

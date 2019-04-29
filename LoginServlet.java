@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		//exceeded logins
-		if(loginAttempts > 3) {
+		if(loginAttempts > 2) {
 			String errorMessage = "Error: Number of Login Attempts Exceeded";
 			request.setAttribute("errorMessage", errorMessage);
 			url = "index.jsp";
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 				session.invalidate();
 				session = request.getSession(true);
 				session.setAttribute("customer", customer);
-				url = "products.jsp";
+				url = "doRead";
 			} else {
 				errorMessage = "Error: Unrecognized Username or Password<br>Login attempts remaining: "+(3-(loginAttempts));
 				request.setAttribute("errorMessage", errorMessage);

@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbHelpers.ReadCartQuery;
-import dbHelpers.ReadProductsQuery;
+import dbHelpers.RemoveFromCartQuery;
+import model.Cart;
 import model.Customer;
 
 /**
- * Servlet implementation class ReadProductsServlet
+ * Servlet implementation class DeleteServlet
  */
-@WebServlet("/doReadCart")
-public class ReadCartServlet extends HttpServlet {
+@WebServlet(description = "Deletes a record for a particular SKU", urlPatterns = { "/doRemoveFromCart" })
+public class RemoveFromCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadCartServlet() {
+    public RemoveFromCartServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,22 +32,32 @@ public class ReadCartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		doPost(request,response);
 	}
 
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// create a readQuery helper
-		ReadCartQuery rcq = new ReadCartQuery("wigglypiggly", "sperryman", "Sp224693!");
-		Customer customer = (Customer) request.getSession(false).getAttribute("customer");
-				
-		// get html table
-		rcq.doRead(customer);
-		String table = rcq.getHTMLTable();
 		
-		// pass execution to products.jsp
-		request.setAttribute("table", table);
-		String url = "cart.jsp";
+		Customer customer = (Customer) request.getSession(false).getAttribute("customer");
+		int productID = Integer.parseInt(request.getParameter("productID"));
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+	
+		Cart cart = new Cart(); 
+		
+		cart.setCustomer_customerID(customer.getCustomerID());
+		cart.setProduct_productID(productID);
+		cart.setQuantity(quantity);
+		
+		//create Query object
+		RemoveFromCartQuery rfcq = new RemoveFromCartQuery("wigglypiggly", "sperryman", "Sp224693!");
+		
+		//use Query to delete record
+		rfcq.doRemoveFromCart(cart);
+		
+		//pass execution to 
+		String url = "/doReadCart";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

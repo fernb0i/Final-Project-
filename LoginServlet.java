@@ -74,6 +74,7 @@ public class LoginServlet extends HttpServlet {
 				session.invalidate();
 				session = request.getSession(true);
 				session.setAttribute("customer", customer);
+				request.setAttribute("Customer", customer);
 				url = "doRead";
 			} else {
 				errorMessage = "Error: Unrecognized Username or Password<br>Login attempts remaining: "+(3-(loginAttempts));

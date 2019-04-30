@@ -74,8 +74,9 @@ public class CartLoginServlet extends HttpServlet {
 				session.invalidate();
 				session = request.getSession(true);
 				session.setAttribute("customer", customer);
+				request.setAttribute("customer", customer);
 				//
-				url = "cart.jsp";
+				url = "doReadCart";
 				//
 			} else {
 				errorMessage = "Error: Unrecognized Username or Password<br>Login attempts remaining: "+(3-(loginAttempts));

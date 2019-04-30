@@ -4,7 +4,7 @@
     <%
     
    	String table = (String) request.getAttribute("table");
-    
+
     %>
 <!DOCTYPE html>
 <html>
@@ -30,9 +30,28 @@
             <br>
             <%= table  %>
             <br>
-            <a href="add">Add a product</a>
+            <p>Add to Cart:</p>
+            <form name="addToCartForm" action="doAddToCart" method=post>
+                <table>
+                    <tr>
+                        <td><label>Item Name</label></td>
+                        <td><select name="productID">
+						    <option value="1">Wine</option>
+						    <option value="2">Cheese</option>
+						    <option value="3">Spices</option>
+						    <option value="4">Chex Mix</option>
+						    <option value="5">Cereal</option>
+						    <option value="6">Veggies</option>
+						 	</select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Quantity</label></td>
+                        <td><input type="number" name="quantity" min="1" max="30"></td>
+                    </tr>
+                </table>
+                <input id="submitButton" type="submit" name="submitButton" value="Register" />
+            </form>
         </div>
-
     </div>
 </div>
 </body>

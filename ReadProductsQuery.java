@@ -79,9 +79,6 @@ public class ReadProductsQuery {
 				table +="<td>";
 				table += product.getInventory();
 				table +="</td>";
-				table +="<td>";
-				table += "<a href=update?productID=" + product.getProductID() + ">update</a> <a href=delete?productID=" + product.getProductID() + ">delete</a>";
-				table +="</td>";
 
 				table +="</tr>";
 			}

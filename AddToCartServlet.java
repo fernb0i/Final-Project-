@@ -9,21 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbHelpers.ReadCartQuery;
-import dbHelpers.ReadProductsQuery;
+import dbHelpers.AddToCartQuery;
+import dbHelpers.RegisterQuery;
+import model.Cart;
 import model.Customer;
+import model.Product;
 
 /**
- * Servlet implementation class ReadProductsServlet
+ * Servlet implementation class RegisterServlet
  */
-@WebServlet("/doReadCart")
-public class ReadCartServlet extends HttpServlet {
+@WebServlet(name = "RegisterCustomerServlet", urlPatterns = { "/doAddToCart" })
+public class AddToCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadCartServlet() {
+    public AddToCartServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,22 +37,36 @@ public class ReadCartServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// create a readQuery helper
-		ReadCartQuery rcq = new ReadCartQuery("wigglypiggly", "sperryman", "Sp224693!");
+		//get the data
 		Customer customer = (Customer) request.getSession(false).getAttribute("customer");
-				
-		// get html table
-		rcq.doRead(customer);
-		String table = rcq.getHTMLTable();
+		int productID = Integer.parseInt(request.getParameter("productID"));
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+
 		
-		// pass execution to products.jsp
-		request.setAttribute("table", table);
-		String url = "cart.jsp";
+		//set up a product object
+		Cart cart = new Cart(); 
 		
+		cart.setCustomer_customerID(customer.getCustomerID());
+		cart.setProduct_productID(productID);
+		cart.setQuantity(quantity);
+		
+		//set up a RegisterQuery object
+		AddToCartQuery atcq = new AddToCartQuery("wigglypiggly", "sperryman", "Sp224693!");
+		
+		//pass the customer to addQuery to add to the database
+		atcq.doAddToCart(cart);
+		
+		//
+		
+		String url = "doRead";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
+		
+
 	}
 
 }

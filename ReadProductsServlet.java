@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dbHelpers.ReadProductsQuery;
+import model.Customer;
 
 /**
  * Servlet implementation class ReadProductsServlet

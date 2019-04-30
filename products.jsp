@@ -36,12 +36,12 @@
                     <tr>
                         <td><label>Item Name</label></td>
                         <td><select name="productID">
-						    <option value="1">Wine</option>
-						    <option value="2">Cheese</option>
-						    <option value="3">Spices</option>
-						    <option value="4">Chex Mix</option>
-						    <option value="5">Cereal</option>
-						    <option value="6">Veggies</option>
+						    <option value="1" style = "background-image:url('resources/wine.jpeg');">Wine</option>
+						    <option value="2"style = "background-image:url('resources/cheese.jpg');">Cheese</option>
+						    <option value="3"style = "background-image:url('resources/spices.jpg');">Spices</option>
+						    <option value="4"style = "background-image:url('resources/snacks.jpg');">Chex Mix</option>
+						    <option value="5"style = "background-image:url('resources/cereal.jpg');">Cereal</option>
+						    <option value="6"style = "background-image:url('resources/produce.jpg');">Veggies</option>
 						 	</select></td>
                     </tr>
                     <tr>

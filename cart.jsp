@@ -50,6 +50,9 @@
                 <input id="submitButton" type="submit" name="submitButton" value="Remove" />
                 <br>
             </form>
+		<form name="exit" action="exit.jsp">
+            <input id="submitButton" type="submit" name="exitButton" value="CheckOut" />
+            </form>
         </div>
 
     </div>

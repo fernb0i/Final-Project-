@@ -49,7 +49,7 @@
                         <td><input type="number" name="quantity" min="1" max="30"></td>
                     </tr>
                 </table>
-                <input id="submitButton" type="submit" name="submitButton" value="Register" />
+                <input id="submitButton" type="submit" name="submitButton" value="Add to Cart" />
             </form>
         </div>
     </div>
